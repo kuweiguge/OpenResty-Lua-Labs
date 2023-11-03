@@ -45,7 +45,7 @@
     - ✅ [示例 3: 模块](lualib/myapp1/controller/lesson3.lua)
     - ✅ [示例 4: 元表和元方法](lualib/myapp1/controller/lesson4.lua)
     - ✅ [示例 5: setmetatable函数](lualib/myapp1/controller/lesson5.lua)
-    - [示例 6: 错误处理](lualib/myapp1/controller/lesson6.lua)
+    - ✅ [示例 6: 错误处理](lualib/myapp1/controller/lesson6.lua)
 2. **lua的进阶语法**
     - [示例 7: 协程](lualib/myapp1/controller/lesson7.lua)
     - [示例 8: 文件I/O](lualib/myapp1/controller/lesson8.lua)

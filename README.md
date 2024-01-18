@@ -38,6 +38,7 @@
 ```
 
 ## 目录
+> ✅开头的表示已经完成
 
 1. **lua的基本语法**
     - ✅ [示例 1: 变量和类型](lualib/myapp1/controller/lesson1.lua)
@@ -47,14 +48,14 @@
     - ✅ [示例 5: setmetatable函数](lualib/myapp1/controller/lesson5.lua)
     - ✅ [示例 6: 错误处理](lualib/myapp1/controller/lesson6.lua)
 2. **lua的进阶语法**
-    - [示例 7: 协程](lualib/myapp1/controller/lesson7.lua)
-    - [示例 8: 文件I/O](lualib/myapp1/controller/lesson8.lua)
+    - ✅ [示例 7: 协程](lualib/myapp1/controller/lesson7.lua)
+    - ✅ [示例 8: 文件I/O](lualib/myapp1/controller/lesson8.lua)
     - [示例 9: 和C交互](lualib/myapp1/controller/lesson9.lua)
     - [示例 10: 垃圾回收](lualib/myapp1/controller/lesson10.lua)
-    - [示例 11: Lua的面向对象编程](lualib/myapp1/controller/lesson11.lua)
-    - [示例 12: Lua的函数式编程](lualib/myapp1/controller/lesson12.lua)
+    - ✅ [示例 11: Lua的面向对象编程](lualib/myapp1/controller/lesson11.lua)
+    - ✅ [示例 12: Lua的函数式编程](lualib/myapp1/controller/lesson12.lua)
 3. **OpenResty的HTTP服务器**
-    - [示例 13: 处理HTTP请求](lualib/myapp1/controller/lesson13.lua)
+    - ✅ [示例 13: 处理HTTP请求](lualib/myapp1/controller/lesson13.lua)
     - [示例 14: 发送HTTP响应](lualib/myapp1/controller/lesson14.lua)
     - [示例 15: 使用共享内存](lualib/myapp1/controller/lesson17.lua)
     - [示例 16: 使用子请求](lualib/myapp1/controller/lesson18.lua)
@@ -78,9 +79,9 @@
     - ...
 ## 快速开始
 
-> 该存储库中的每个Lua文件都是一个特定概念的自包含示例。您可以逐个探索它们或尝试修改他们，查看不同的结果。
+> 该存储库中的每个Lua文件都是一个特定概念的示例。您可以逐个探索它们或尝试修改他们，查看不同的结果。
 
-在项目根目录执行下面命令，
+在项目根目录执行下面命令：
 
 1. 验证`nginx.conf`配置是否正确
 ```shell
@@ -140,6 +141,7 @@ dog not found.
 > -p 参数是用来指定 OpenResty 运行的工作目录的，$PWD/ 则是一个环境变量，代表当前的工作目录。
 这个命令的意思是在当前目录下启动 OpenResty。OpenResty 启动后，会在这个目录下查找 nginx.conf 配置文件，并根据这个配置文件来运行。
 
+> 文件中大部分使用的是`ngx.say()`来输出结果,如果使用`print()`或者`ngx.log()`打印结果，则到`logs/error.log`中查看。
 其他命令：
 
 3. 重启OpenResty服务
@@ -150,7 +152,17 @@ openresty -p $PWD/ -s reload
 ```shell
 openresty -p $PWD/ -s stop
 ```
-## 声明
-一起逐步完善
 
-啥时候突破 0 star
+## luarocks
+
+```shell
+# MacOS安装luarocks
+brew install luarocks
+
+# 使用luarocks安装其他包时，指定lua版本，例如安装lfs
+# luarocks默认使用的是lua5.4，openresty的luajit兼容的是lua5.1
+luarocks install luafilesystem --lua-version=5.1
+
+# 查看luarocks的lua_package_path
+luarocks path
+```
